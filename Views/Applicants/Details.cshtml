@@ -1,0 +1,60 @@
+﻿@model Jobify.Models.Applicant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>@Model.FirstName - @Model.LastName</h2>
+    </div>
+</div>
+<section id="course-details" class="course-details">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="../../assets/img/hero-bg.jpg" class="img-fluid" alt="">
+                <h3>@Html.DisplayFor(model => model.FirstName) - @Html.DisplayFor(model => model.LastName)</h3>
+                <p align="justify">
+                    BIO:
+                    @Html.DisplayFor(model => model.ApplicantDetails.Bio)
+                    <hr>
+                    Email Address:
+                    @Html.DisplayFor(model => model.Email)
+                    <hr>
+                    Phone Number:
+                    @Html.DisplayFor(model => model.ApplicantDetails.PhoneNumber)
+                    <hr>
+                </p>
+            </div>
+                <div class="col-lg-4">
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Education</h5>
+                        <p>@Html.DisplayFor(model => model.ApplicantDetails.Education)</p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Projects</h5>
+                        <p>@Html.DisplayFor(model => model.ApplicantDetails.Projects)</p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Languages</h5>
+                        <p>@Html.DisplayFor(model => model.ApplicantDetails.Languages)</p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Experience</h5>
+                        <p>@Html.DisplayFor(model => model.ApplicantDetails.Experience)</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div></section>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicantId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

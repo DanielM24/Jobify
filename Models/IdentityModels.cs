@@ -20,6 +20,13 @@ namespace Jobify.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Applicant> Applicants { get; set; }
+        public DbSet<ApplicantDetails> ApplicantDetails { get; set; }
+        public DbSet<ApplicantJob> ApplicantJob { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

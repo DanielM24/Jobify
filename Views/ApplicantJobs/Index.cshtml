@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Jobify.Models.ApplicantJob>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>List of Job Applications</h2>
+    </div>
+</div>
+<section id="about" class="about">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <p>
+            @Html.ActionLink("Apply for a new job", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Applicant.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Job.JobName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Applicant.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Job.JobName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                          @*| @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+                            | @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div></section>

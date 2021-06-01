@@ -1,0 +1,41 @@
+﻿@model Jobify.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>About Us - @Model.CompanyName</h2>
+    </div>
+</div>
+
+<section id="about" class="about">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">
+                <img src="../../assets/img/about.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <h3>What about us? - @Model.CompanyName</h3>
+                <p align="justify">
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="col-lg-3">
+    <ul class="nav nav-tabs flex-column">
+        <li class="nav-item">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyId })
+        </li>
+        <li class="nav-item">
+            @Html.ActionLink("Back to List", "Index")
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,64 @@
+﻿@model Jobify.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>@Model.JobName</h2>
+    </div>
+</div>
+
+<section id="course-details" class="course-details">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="../../assets/img/course-details.jpg" class="img-fluid" alt="">
+                <h3>@Html.DisplayFor(model => model.Company.CompanyName) - @Html.DisplayFor(model => model.JobName)</h3>
+                <p align="justify">
+                    @Html.DisplayFor(model => model.JobDescription)
+                </p>
+            </div>
+            <div class="col-lg-4">
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Duration</h5>
+                    <p>@Html.DisplayFor(model => model.DurationInMonths) Months</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Salary</h5>
+                    <p>@Html.DisplayFor(model => model.Salary)</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>@Html.DisplayNameFor(model => model.City)</h5>
+                    <p>@Html.DisplayFor(model => model.City)</p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>@Html.DisplayNameFor(model => model.IsRemote)</h5>
+                    @if (Model.IsRemote) {
+                <p>Yes</p>}
+                    else {
+                    <p>No</p>}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="col-lg-3">
+    <ul class="nav nav-tabs flex-column">
+        <li class="nav-item">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.JobId })
+        </li>
+        <li class="nav-item">
+            @Html.ActionLink("Back to List", "Index")
+        </li>
+    </ul>
+</div>

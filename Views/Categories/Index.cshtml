@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Jobify.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>List of Categories</h2>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+    </tr>
+}
+
+</table>

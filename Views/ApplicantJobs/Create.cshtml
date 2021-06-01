@@ -1,0 +1,49 @@
+﻿@model Jobify.Models.ApplicantJob
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>Apply for a new Job</h2>
+    </div>
+</div>
+<section id="course-details" class="course-details">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ApplicantId, "Applicant Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ApplicantId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ApplicantId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.JobId, "Job", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("JobId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.JobId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-outline-success" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

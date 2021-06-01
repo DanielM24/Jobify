@@ -1,0 +1,27 @@
+﻿@model Jobify.Models.Job
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>@Model.JobName</h2>
+    </div>
+</div>
+<section id="course-details" class="course-details">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <h3>Are you sure you want to delete this job?</h3>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+      </div>
+    </section>

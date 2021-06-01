@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Jobify.Models.Job>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Jobs</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Job</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in Model)
+        {
+            <tr>
+                <td>@job.JobDescription</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Jobify.Models.Company>
+
+@{
+    ViewBag.Title = "Companies";
+}
+
+<div class="breadcrumbs aos-init aos-animate" data-aos="fade-in">
+    <div class="container">
+        <h2>List of Companies</h2>
+    </div>
+</div>
+
+<section id="about" class="about">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <table class="table">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.CompanyId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>
