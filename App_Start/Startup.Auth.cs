@@ -55,8 +55,8 @@ namespace Jobify
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "306932407686684",
-               appSecret: "7a3ad604b65ed3e3777ed36bd4bd9a1e");
+               appId: "",
+               appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
